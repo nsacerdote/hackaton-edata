@@ -1,0 +1,20 @@
+app-ui-panel {
+  width: 650px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+app-avatar-circle {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+}
+
+.message {
+  margin-left: 10px;
+  flex-grow: 1;
+}
+
+.next {
+  font-size: 50px;
+}
