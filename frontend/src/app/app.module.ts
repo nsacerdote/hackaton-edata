@@ -19,6 +19,7 @@ import { UiElementComponent } from './game/ui/shared/ui-element/ui-element.compo
 import { AvatarCircleComponent } from './game/ui/shared/avatar-circle/avatar-circle.component';
 import { UiPanelComponent } from './game/ui/shared/ui-panel/ui-panel.component';
 import { HealthBarComponent } from './game/ui/shared/health-bar/health-bar.component';
+import { SandboxComponent } from './sandbox/sandbox.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { HealthBarComponent } from './game/ui/shared/health-bar/health-bar.compo
     NewEventComponent,
     UiPanelComponent,
     HealthBarComponent,
-    AnimatedShapeComponent
+    AnimatedShapeComponent,
+    SandboxComponent
   ],
   imports: [
     BrowserModule,
