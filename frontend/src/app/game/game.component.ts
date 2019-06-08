@@ -4,6 +4,7 @@ import { CellActor } from './model/cell.actor';
 import { Level } from './model/level';
 import { Scene } from './model/scene';
 import { Dialog } from './model/dialog';
+import {WaitAction} from "./model/wait.action";
 
 @Component({
   selector: 'app-game',
