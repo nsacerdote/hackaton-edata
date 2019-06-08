@@ -16,6 +16,7 @@ import {AnimatedShapeComponent} from "./game/ui/animated-shape/animated-shape.co
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 import { AvatarCircleComponent } from './game/ui/avatar-circle/avatar-circle.component';
+import { SandboxComponent } from './sandbox/sandbox.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AvatarCircleComponent } from './game/ui/avatar-circle/avatar-circle.com
     AvatarCircleComponent,
     UiElementComponent,
     UiComponent,
-    AnimatedShapeComponent
+    AnimatedShapeComponent,
+    SandboxComponent
   ],
   imports: [
     BrowserModule,
