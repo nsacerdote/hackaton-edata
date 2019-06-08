@@ -8,6 +8,9 @@ import { AdminComponent } from './admin/admin.component';
 import { GameComponent } from './game/game.component';
 import { SceneComponent } from './game/scene/scene.component';
 import { UiComponent } from './game/ui/ui.component';
+import {AnimatedShapeComponent} from "./game/ui/animated-shape/animated-shape.component";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+
 
 @NgModule({
   declarations: [
@@ -16,11 +19,13 @@ import { UiComponent } from './game/ui/ui.component';
     AdminComponent,
     GameComponent,
     SceneComponent,
-    UiComponent
+    UiComponent,
+    AnimatedShapeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
