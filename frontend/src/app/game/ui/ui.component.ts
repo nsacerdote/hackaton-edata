@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-ui',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UiComponent implements OnInit {
 
+  @Output() nextSceneRequest = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+    setTimeout(
+      () => this.nextSceneRequest.emit(),
+      2000
+    );
   }
 
 }
