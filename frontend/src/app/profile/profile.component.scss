@@ -1,0 +1,23 @@
+:host {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #1eb04e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: kenney-future-square, sans-serif;
+  color: #444444;
+}
+
+app-avatar-circle {
+  width: 150px;
+  height: 150px;
+}
+
+span {
+  margin-top: 20px;
+}
