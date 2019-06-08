@@ -38,8 +38,6 @@ import { DialogComponent } from './game/ui/dialog/dialog.component';
     EnemyComponent,
     UiElementComponent,
     AvatarCircleComponent,
-    UiElementComponent,
-    UiComponent,
     NewEventComponent,
     UiPanelComponent,
     HealthBarComponent,
