@@ -12,7 +12,6 @@ import {FormsModule} from '@angular/forms';
 import { ButtonComponent } from './core/button/button.component';
 import { PlayerComponent } from './game/ui/player/player.component';
 import { EnemyComponent } from './game/ui/enemy/enemy.component';
-import { StepperComponent } from './game/ui/stepper/stepper.component';
 import {AnimatedShapeComponent} from './game/ui/animated-shape/animated-shape.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NewEventComponent } from './admin/new-event/new-event.component';
@@ -32,7 +31,6 @@ import { HealthBarComponent } from './game/ui/shared/health-bar/health-bar.compo
     ButtonComponent,
     PlayerComponent,
     EnemyComponent,
-    StepperComponent,
     UiElementComponent,
     AvatarCircleComponent,
     UiElementComponent,
