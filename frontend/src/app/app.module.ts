@@ -18,6 +18,7 @@ import {AnimatedShapeComponent} from './game/ui/animated-shape/animated-shape.co
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AvatarCircleComponent } from './game/ui/avatar-circle/avatar-circle.component';
+import { NewEventComponent } from './admin/new-event/new-event.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AvatarCircleComponent } from './game/ui/avatar-circle/avatar-circle.com
     AvatarCircleComponent,
     UiElementComponent,
     UiComponent,
-    AnimatedShapeComponent
+    AnimatedShapeComponent,
+    NewEventComponent
   ],
   imports: [
     BrowserModule,
