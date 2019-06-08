@@ -7,14 +7,6 @@ export class BounceAnimationAction extends Action {
     super(iterations * 800, false);
   }
 
-  // play(actor: Actor) {
-  //   actor.animationClass = 'bounce';
-  //   setTimeout(() => {
-  //     this.isComplete = true;
-  //     actor.animationClass = null;
-  //   }, this.duration);
-  // }
-
   doAction(actor: CellActor, percentage: number) {
     if (!this.isComplete) {
       actor.animationClass = 'bounce';
