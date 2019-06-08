@@ -252,7 +252,7 @@ export class GameComponent implements OnInit {
     this.currentScene = this.level.scenes[0];
   }
 
-  loadNextScene(sceneId: Event) {
+  loadNextScene(sceneId) {
     if(sceneId){
       console.log(event);
       this.goToScene(sceneId);
