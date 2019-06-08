@@ -14,6 +14,10 @@ import { PlayerComponent } from './game/ui/player/player.component';
 import { EnemyComponent } from './game/ui/enemy/enemy.component';
 import { StepperComponent } from './game/ui/stepper/stepper.component';
 import { UiElementComponent } from './game/ui/ui-element/ui-element.component';
+import {AnimatedShapeComponent} from './game/ui/animated-shape/animated-shape.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import { AvatarCircleComponent } from './game/ui/avatar-circle/avatar-circle.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +31,17 @@ import { UiElementComponent } from './game/ui/ui-element/ui-element.component';
     PlayerComponent,
     EnemyComponent,
     StepperComponent,
-    UiElementComponent
+    UiElementComponent,
+    AvatarCircleComponent,
+    UiElementComponent,
+    UiComponent,
+    AnimatedShapeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
