@@ -8,6 +8,10 @@ import { AdminComponent } from './admin/admin.component';
 import { GameComponent } from './game/game.component';
 import { SceneComponent } from './game/scene/scene.component';
 import { UiComponent } from './game/ui/ui.component';
+import { PlayerComponent } from './game/ui/player/player.component';
+import { EnemyComponent } from './game/ui/enemy/enemy.component';
+import { StepperComponent } from './game/ui/stepper/stepper.component';
+import { UiElementComponent } from './game/ui/ui-element/ui-element.component';
 import {AnimatedShapeComponent} from "./game/ui/animated-shape/animated-shape.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
@@ -19,6 +23,11 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     AdminComponent,
     GameComponent,
     SceneComponent,
+    UiComponent,
+    PlayerComponent,
+    EnemyComponent,
+    StepperComponent,
+    UiElementComponent,
     UiComponent,
     AnimatedShapeComponent
   ],
