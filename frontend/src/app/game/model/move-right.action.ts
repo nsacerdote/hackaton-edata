@@ -7,9 +7,10 @@ export class MoveRightAction extends Action {
     super(duration, false);
   }
 
-  play(actor: Actor) {
-    actor.pos.x++;
-    setTimeout(() => this.isComplete = true, this.duration);
+  doAction(actor: Actor, percentage: number) {
+    if (!this.isComplete) {
+      actor.pos.x++;
+    }
   }
 
 }

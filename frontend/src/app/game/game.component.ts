@@ -4,7 +4,8 @@ import { CellActor } from './model/cell.actor';
 import { Level } from './model/level';
 import { Scene } from './model/scene';
 import { Dialog } from './model/dialog';
-import {WaitAction} from "./model/wait.action";
+import { MoveToAction } from './model/move-to.action';
+import { MoveRightAction } from './model/move-right.action';
 
 @Component({
   selector: 'app-game',
@@ -19,8 +20,8 @@ export class GameComponent implements OnInit {
         new Scene(
           '/assets/images/background.png',
           [
-            new CellActor(new Pos(300, 200), true, []),
-            new CellActor(new Pos(100, 100), false, [])
+            new CellActor(new Pos(200, 200), true, [new MoveToAction(new Pos(400, 600), 5000)]),
+            new CellActor(new Pos(100, 100), false, [new MoveRightAction(2000)])
           ],
           [
             new Dialog(
@@ -79,6 +80,6 @@ export class GameComponent implements OnInit {
   }
 
   gameLoop() {
-    setInterval(() => this.currentScene.act(), 16);
+    setInterval(() => this.currentScene.act(), 0);
   }
 }
