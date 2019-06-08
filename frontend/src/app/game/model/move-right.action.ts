@@ -3,13 +3,14 @@ import {Actor} from './actor';
 
 export class MoveRightAction extends Action {
 
-  constructor(duration: number) {
+  constructor(duration?: number) {
     super(duration, false);
   }
 
-  play(actor: Actor) {
-    actor.pos.x++;
-    setTimeout(() => this.isComplete = true, this.duration);
+  doAction(actor: Actor, percentage: number) {
+    if (!this.isComplete) {
+      actor.pos.x++;
+    }
   }
 
 }

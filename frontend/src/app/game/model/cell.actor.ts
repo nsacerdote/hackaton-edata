@@ -10,8 +10,7 @@ export class CellActor extends Actor {
   constructor(initPos: Pos, public isGood: boolean, actions: Array<Action>) {
     super(initPos,
       new Size(75, 75),
-      isGood ? '/assets/images/good-cell.png' : '/assets/images/bad-cell.png',
-      actions);
+      isGood ? '/assets/images/good-cell.png' : '/assets/images/bad-cell.png', actions, null);
     if (actions.length !== 0) {
       this.currentAction = actions.shift();
     }
