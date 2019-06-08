@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Actor } from '../../model/actor';
 
 @Component({
@@ -10,15 +10,13 @@ export class ActorComponent implements OnInit {
 
   @Input() actor: Actor;
 
-  constructor(private renderer: Renderer2, private el: ElementRef) { }
+  constructor() { }
 
   ngOnInit() {
-    console.log(this.actor);
-    this.renderer.setStyle(this.el.nativeElement, 'background-image', 'url(' + this.actor.image + ')');
-    this.renderer.setStyle(this.el.nativeElement, 'bottom', this.actor.pos.y + 'px');
-    this.renderer.setStyle(this.el.nativeElement, 'left', this.actor.pos.x + 'px');
-    this.renderer.setStyle(this.el.nativeElement, 'width', this.actor.size.width + 'px');
-    this.renderer.setStyle(this.el.nativeElement, 'height', this.actor.size.height + 'px');
+  }
+
+  onClicked() {
+    this.actor.onClicked();
   }
 
 }

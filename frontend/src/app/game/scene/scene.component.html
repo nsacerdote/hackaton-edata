@@ -1,1 +1,1 @@
-<app-actor *ngFor="let actor of actors" [actor]="actor"></app-actor>
+<app-actor *ngFor="let actor of actors" [actor]="actor" (click)="actorComponent.onClicked()" #actorComponent></app-actor>

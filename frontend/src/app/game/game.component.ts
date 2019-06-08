@@ -11,7 +11,7 @@ export class GameComponent implements OnInit {
 
   actors = [
     new CellActor(new Pos(300, 200), true),
-    new CellActor(new Pos(100, 400), false),
+    new CellActor(new Pos(100, 100), false),
   ];
 
   constructor() { }
