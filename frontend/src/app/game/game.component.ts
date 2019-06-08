@@ -3,6 +3,7 @@ import { Pos } from './model/pos';
 import { CellActor } from './model/cell.actor';
 import { Level } from './model/level';
 import { Scene } from './model/scene';
+import { Dialog } from './model/dialog';
 
 @Component({
   selector: 'app-game',
@@ -19,6 +20,19 @@ export class GameComponent implements OnInit {
           actors: [
             new CellActor(new Pos(300, 200), true),
             new CellActor(new Pos(100, 100), false)
+          ],
+          dialogs: [
+            new Dialog(
+              'This is the message',
+              '/assets/audio/narrative/intro_scene_1_dialog_1.wav',
+              '/assets/images/doctor.png'
+            ),
+            new Dialog(
+              'This is the message 2',
+              '/assets/audio/narrative/intro_scene_1_dialog_2.wav',
+              '/assets/images/doctor.png'
+            )
+
           ]
         },
         {
@@ -26,7 +40,20 @@ export class GameComponent implements OnInit {
           actors: [
             new CellActor(new Pos(200, 200), true),
             new CellActor(new Pos(500, 100), false)
+          ],
+          dialogs: [
+            new Dialog(
+              'Scene 2',
+              '/assets/audio/narrative/intro_scene_2_dialog_1.wav',
+              '/assets/images/doctor.png'
+            ),
+            new Dialog(
+              'Scene 2 the message 2',
+              '/assets/audio/narrative/intro_scene_2_dialog_2.wav',
+              '/assets/images/doctor.png'
+            )
           ]
+
         }
       ]
     }

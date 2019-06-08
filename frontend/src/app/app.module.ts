@@ -23,6 +23,7 @@ import {DpDatePickerModule} from 'ng2-date-picker';
 import { SandboxComponent } from './sandbox/sandbox.component';
 import { ActorComponent } from './game/scene/actor/actor.component';
 import { ProfileComponent } from './profile/profile.component';
+import { DialogComponent } from './game/ui/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ProfileComponent } from './profile/profile.component';
     AnimatedShapeComponent,
     SandboxComponent,
     ActorComponent,
+    DialogComponent,
     ProfileComponent
   ],
   imports: [

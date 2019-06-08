@@ -5,3 +5,7 @@
 <app-ui-element [bottom]="'0'" [left]="'0'" style="margin-left: 10px; margin-bottom: 10px;">
   <app-player [playerName]="loggedUser.name"></app-player>
 </app-ui-element>
+
+<app-ui-element (click)="nextDialog()" [bottom]="'0'" [left]="'300px'" style="margin-bottom: 10px; margin-right: 10px" *ngIf="currentDialog">
+  <app-dialog [dialog]="currentDialog"></app-dialog>
+</app-ui-element>
