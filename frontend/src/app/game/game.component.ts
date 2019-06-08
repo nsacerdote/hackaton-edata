@@ -122,7 +122,50 @@ export class GameComponent implements OnInit {
               '¿Puedo pincharte para dártelo?',
               '/assets/audio/narrative/misionQuimio05.mp3',
               '/assets/images/portraits/nurse-portrait.jpg',
-              true
+              true,
+              2,
+              3
+            )
+          ]
+        ),
+        // id 2
+        new Scene(
+          '/assets/images/bg-hospital-room.png',
+          [
+          ],
+          [
+            new Dialog(
+              'Alternativa YES',
+              '/assets/audio/narrative/misionQuimio03.mp3',
+              '/assets/images/portraits/doctor-portrait.jpg',
+            )
+          ],
+          4
+        ),
+        // id 3
+        new Scene(
+
+          '/assets/images/bg-hospital-room.png',
+          [
+          ],
+          [
+            new Dialog(
+              'Alternativa NO',
+              '/assets/audio/narrative/misionQuimio03.mp3',
+              '/assets/images/portraits/doctor-portrait.jpg'
+            )
+          ]
+        ),
+        // id 4
+        new Scene(
+          '/assets/images/bg-hospital-room.png',
+          [
+          ],
+          [
+            new Dialog(
+              'Tras Alternativa SI',
+              '/assets/audio/narrative/misionQuimio03.mp3',
+              '/assets/images/portraits/doctor-portrait.jpg'
             )
           ]
         )
@@ -146,14 +189,34 @@ export class GameComponent implements OnInit {
     this.currentScene = this.level.scenes[0];
   }
 
-  loadNextScene() {
-    const nextIndex = this.level.scenes.indexOf(this.currentScene) + 1;
-    if (nextIndex < this.level.scenes.length) {
-      this.currentScene = this.level.scenes[nextIndex];
+  loadNextScene(sceneId: Event) {
+    if(sceneId){
+      console.log(event);
+      this.goToScene(sceneId);
+    }
+    else {
+      this.currentScene.dialogs;
+      let nextIndex;
+      if(this.currentScene.nextScene){
+        nextIndex = this.currentScene.nextScene;
+      }
+      else{
+        nextIndex = this.level.scenes.indexOf(this.currentScene) + 1;
+      }
+
+      this.goToScene(nextIndex);
+    }
+  }
+
+  goToScene(sceneId: number){
+    if (sceneId < this.level.scenes.length) {
+      this.currentScene = this.level.scenes[sceneId];
     } else {
       this.loadNextLevel();
     }
   }
+
+
 
   loadNextLevel() {
     console.log('loadNextLevel');
