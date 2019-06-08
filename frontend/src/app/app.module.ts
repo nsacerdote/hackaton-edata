@@ -12,6 +12,7 @@ import { PlayerComponent } from './game/ui/player/player.component';
 import { EnemyComponent } from './game/ui/enemy/enemy.component';
 import { StepperComponent } from './game/ui/stepper/stepper.component';
 import { UiElementComponent } from './game/ui/ui-element/ui-element.component';
+import { AvatarCircleComponent } from './game/ui/avatar-circle/avatar-circle.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UiElementComponent } from './game/ui/ui-element/ui-element.component';
     PlayerComponent,
     EnemyComponent,
     StepperComponent,
-    UiElementComponent
+    UiElementComponent,
+    AvatarCircleComponent
   ],
   imports: [
     BrowserModule,
