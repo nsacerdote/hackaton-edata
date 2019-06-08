@@ -14,6 +14,7 @@ export class GameComponent implements OnInit {
 
   private levels: Record<string, Level> = {
     INTRO: {
+      nextLevel: 'MISSION_CHEMO',
       scenes: [
         new Scene(
           '/assets/images/background.png',
@@ -75,6 +76,53 @@ export class GameComponent implements OnInit {
           ]
         )
       ]
+    },
+    MISSION_CHEMO: {
+      nextLevel: 'HEADQUARTER',
+      scenes: [
+        new Scene(
+          '/assets/images/background.png',
+          [
+          ],
+          [
+            new Dialog(
+              'Cada vez queda menos energía donde estamos. Deberíamos metastatizarnos y alcanzar otras partes del cuerpo',
+              '/assets/audio/narrative/misionQuimio01.mp3',
+              '/assets/images/portraits/bad-cell-portrait.png'
+            ),
+            new Dialog(
+              '¡Oh no! Está intentando metastatizarse para crecer por tu cuerpo. ¡Debemos actuar!',
+              '/assets/audio/narrative/misionQuimio02.mp3',
+              '/assets/images/portraits/doctor-portrait.jpg'
+            )
+          ]
+        ),
+        new Scene(
+          '/assets/images/bg-hospital-room.png',
+          [
+          ],
+          [
+            new Dialog(
+              'Necesitamos pincharte para poder inyectarte este suero. ' +
+              'Cuando lo hagamos nos ayudará a destruir una parte del cáncer y protegerá tus células.',
+              '/assets/audio/narrative/misionQuimio03.mp3',
+              '/assets/images/portraits/doctor-portrait.jpg'
+            ),
+            new Dialog(
+              'Es verdad que al principio te sentirás algo mareado o que te pueda doler la barriga, ' +
+              'pero después tu cuerpo estará mejor preparado.',
+              '/assets/audio/narrative/misionQuimio04.mp3',
+              '/assets/images/portraits/doctor-portrait.jpg'
+            ),
+            new Dialog(
+              '¿Puedo pincharte para dártelo?',
+              '/assets/audio/narrative/misionQuimio05.mp3',
+              '/assets/images/portraits/nurse-portrait.jpg',
+              true
+            )
+          ]
+        )
+      ]
     }
   };
 
@@ -96,7 +144,17 @@ export class GameComponent implements OnInit {
 
   loadNextScene() {
     const nextIndex = this.level.scenes.indexOf(this.currentScene) + 1;
-    this.currentScene = this.level.scenes[nextIndex];
+    if (nextIndex < this.level.scenes.length) {
+      this.currentScene = this.level.scenes[nextIndex];
+    } else {
+      this.loadNextLevel();
+    }
+  }
+
+  loadNextLevel() {
+    console.log('loadNextLevel');
+    this.level = this.levels[this.level.nextLevel];
+    this.currentScene = this.level.scenes[0];
   }
 
   gameLoop() {

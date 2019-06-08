@@ -36,11 +36,13 @@ export class UiComponent implements OnInit, OnChanges {
   }
 
   nextDialog() {
-    const nextIndex = this.dialogs.indexOf(this.currentDialog) + 1;
-    if(nextIndex == this.dialogs.length){
-      this.showNextSceneButton = true;
+    if (this.currentDialog.promptUser === false) {
+      const nextIndex = this.dialogs.indexOf(this.currentDialog) + 1;
+      if(nextIndex === this.dialogs.length) {
+        this.showNextSceneButton = true;
+      }
+      this.currentDialog = this.dialogs[nextIndex];
     }
-    this.currentDialog = this.dialogs[nextIndex];
   }
 
   loadNextScene(){

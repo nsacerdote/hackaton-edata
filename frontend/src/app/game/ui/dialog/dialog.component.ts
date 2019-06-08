@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
 import { Dialog } from '../../model/dialog';
 import { Howl } from 'howler';
 
@@ -8,7 +8,7 @@ import { Howl } from 'howler';
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.scss']
 })
-export class DialogComponent implements OnInit, OnChanges {
+export class DialogComponent implements OnInit, OnChanges, OnDestroy {
 
   @Input() dialog: Dialog;
   dialogSound = null;
@@ -19,9 +19,17 @@ export class DialogComponent implements OnInit, OnChanges {
     this.playDialogSound();
   }
 
+  ngOnDestroy(): void {
+    if (this.dialogSound) {
+      this.dialogSound.stop();
+      this.dialogSound = null;
+    }
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
     this.playDialogSound();
   }
+
 
   private playDialogSound() {
     if (this.dialogSound) {
