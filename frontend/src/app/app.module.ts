@@ -13,11 +13,13 @@ import { ButtonComponent } from './core/button/button.component';
 import { PlayerComponent } from './game/ui/player/player.component';
 import { EnemyComponent } from './game/ui/enemy/enemy.component';
 import { StepperComponent } from './game/ui/stepper/stepper.component';
-import { UiElementComponent } from './game/ui/ui-element/ui-element.component';
 import {AnimatedShapeComponent} from './game/ui/animated-shape/animated-shape.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import { AvatarCircleComponent } from './game/ui/avatar-circle/avatar-circle.component';
+import { UiElementComponent } from './game/ui/shared/ui-element/ui-element.component';
+import { AvatarCircleComponent } from './game/ui/shared/avatar-circle/avatar-circle.component';
+import { UiPanelComponent } from './game/ui/shared/ui-panel/ui-panel.component';
+import { HealthBarComponent } from './game/ui/shared/health-bar/health-bar.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +35,8 @@ import { AvatarCircleComponent } from './game/ui/avatar-circle/avatar-circle.com
     StepperComponent,
     UiElementComponent,
     AvatarCircleComponent,
-    UiElementComponent,
-    UiComponent,
+    UiPanelComponent,
+    HealthBarComponent,
     AnimatedShapeComponent
   ],
   imports: [
