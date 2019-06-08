@@ -1,5 +1,5 @@
-import {Actor} from './actor';
 import {Action} from './action';
+import {CellActor} from './cell.actor';
 
 export class BounceAnimationAction extends Action {
 
@@ -15,11 +15,12 @@ export class BounceAnimationAction extends Action {
   //   }, this.duration);
   // }
 
-  doAction(actor: Actor, percentage: number) {
+  doAction(actor: CellActor, percentage: number) {
     if (!this.isComplete) {
-      console.log('!complete');
       actor.animationClass = 'bounce';
     } else {
+      actor.isGood = !actor.isGood;
+      actor.image = actor.isGood ? '/assets/images/good-cell.png' : '/assets/images/bad-cell.png';
       actor.animationClass = null;
     }
   }
