@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-player',
@@ -9,9 +10,13 @@ export class PlayerComponent implements OnInit {
 
   @Input() playerName: string;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  showProfile(){
+    this.router.navigate(['profile']);
   }
 
 }

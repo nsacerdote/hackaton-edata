@@ -1,0 +1,19 @@
+:host {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  background-size: cover;
+  background-color: #1eb04e;
+  overflow: hidden;
+}
+
+app-avatar-circle {
+  width: 150px;
+  height: 150px;
+  vertical-align: middle;
+  horiz-align: center;
+  display: inline-block;
+}

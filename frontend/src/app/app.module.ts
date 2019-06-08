@@ -22,6 +22,7 @@ import { HealthBarComponent } from './game/ui/shared/health-bar/health-bar.compo
 import {DpDatePickerModule} from 'ng2-date-picker';
 import { SandboxComponent } from './sandbox/sandbox.component';
 import { ActorComponent } from './game/scene/actor/actor.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ActorComponent } from './game/scene/actor/actor.component';
     HealthBarComponent,
     AnimatedShapeComponent,
     SandboxComponent,
-    ActorComponent
+    ActorComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
