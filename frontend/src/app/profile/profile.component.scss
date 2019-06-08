@@ -4,16 +4,20 @@
   right: 0;
   left: 0;
   bottom: 0;
-  z-index: 0;
-  background-size: cover;
   background-color: #1eb04e;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: kenney-future-square, sans-serif;
+  color: #444444;
 }
 
 app-avatar-circle {
   width: 150px;
   height: 150px;
-  vertical-align: middle;
-  horiz-align: center;
-  display: inline-block;
+}
+
+span {
+  margin-top: 20px;
 }
