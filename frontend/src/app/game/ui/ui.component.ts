@@ -17,10 +17,6 @@ export class UiComponent implements OnInit {
   }
 
   ngOnInit() {
-    setTimeout(
-      () => this.nextSceneRequest.emit(),
-      2000
-    );
   }
 
 }
