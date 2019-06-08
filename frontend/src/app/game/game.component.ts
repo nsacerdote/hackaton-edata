@@ -23,14 +23,10 @@ export class GameComponent implements OnInit {
           ],
           [
             new Dialog(
-              'This is the message',
-              '/assets/audio/narrative/intro_scene_1_dialog_1.wav',
-              '/assets/images/doctor.png'
-            ),
-            new Dialog(
-              'This is the message 2',
-              '/assets/audio/narrative/intro_scene_1_dialog_2.wav',
-              '/assets/images/doctor.png'
+              'Jajajajaja, he llegado a tu cuerpo y no pienso marcharme. Solo podrás sacarme de aquí si cuentas con ayuda. ' +
+              'Pero aún soy débil, necesito crear más como yo…',
+              '/assets/audio/narrative/introCancer01.mp3',
+              '/assets/images/portraits/bad-cell-portrait.png'
             )
           ]
         ),
@@ -42,46 +38,42 @@ export class GameComponent implements OnInit {
           ],
           [
             new Dialog(
-              'Scene 2',
-              '/assets/audio/narrative/intro_scene_2_dialog_1.wav',
-              '/assets/images/doctor.png'
+              'Lo conseguí, pero necesitamos ser más si queremos llegar a formar un tumor.',
+              '/assets/audio/narrative/introCancer02.mp3',
+              '/assets/images/portraits/bad-cell-portrait.png'
+            )
+          ]
+        ),
+        new Scene(
+          '/assets/images/bg-hospital-room.png',
+          [
+          ],
+          [
+            new Dialog(
+              '¡Ese cáncer haciendo de las suyas! Se piensa que nadie puede con él, pero está muy equivocado. ' +
+              'Lo hemos pillado a tiempo y podemos empezar a acabar con él',
+              '/assets/audio/narrative/introCancer03.mp3',
+              '/assets/images/portraits/doctor-portrait.jpg'
             ),
             new Dialog(
-              'Scene 2 the message 2',
-              '/assets/audio/narrative/intro_scene_2_dialog_2.wav',
-              '/assets/images/doctor.png'
+              'Va a ser un camino largo, pero le vamos a dar mucha guerra y no sabe que contamos con ayuda',
+              '/assets/audio/narrative/introCancer04.mp3',
+              '/assets/images/portraits/doctor-portrait.jpg'
             )
           ]
-        },
-        {
-          background: '/assets/images/bg-hospital-room.png',
-          actors: [
+        ),
+        new Scene(
+          '/assets/images/bg-all-superheroes.png',
+          [
           ],
-          dialogs: [
+          [
             new Dialog(
-              'Scene 3',
-              '/assets/audio/narrative/intro_scene_2_dialog_1.wav',
-              '/assets/images/doctor.png'
-            ),
-            new Dialog(
-              'Scene 3 the message 2',
-              '/assets/audio/narrative/intro_scene_2_dialog_2.wav',
-              '/assets/images/doctor.png'
+              'Te ayudaremos, pero no podremos nosotros solos. Tú también tendrás que ser un superhéroe. ¡Estaremos esperándote!',
+              '/assets/audio/narrative/introCancer05.mp3',
+              '/assets/images/portraits/superheroes-portrait.jpg'
             )
           ]
-        },
-        {
-          background: '/assets/images/bg-all-superheroes.png',
-          actors: [
-          ],
-          dialogs: [
-            new Dialog(
-              'Scene 3',
-              '/assets/audio/narrative/intro_scene_2_dialog_1.wav',
-              '/assets/images/doctor.png'
-            )
-          ]
-        }
+        )
       ]
     }
   };

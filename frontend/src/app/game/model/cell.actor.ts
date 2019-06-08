@@ -12,8 +12,9 @@ export class CellActor extends Actor {
       new Size(75, 75),
       isGood ? '/assets/images/good-cell.png' : '/assets/images/bad-cell.png',
       actions);
-
-    this.currentAction = actions.shift();
+    if (actions.length !== 0) {
+      this.currentAction = actions.shift();
+    }
   }
 
   onClicked() {
