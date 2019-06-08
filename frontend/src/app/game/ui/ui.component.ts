@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {User} from '../../models/user.model';
+import {AuthenticationService} from '../../services/authentication.service';
 
 @Component({
   selector: 'app-ui',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UiComponent implements OnInit {
 
-  constructor() { }
+  loggedUser: User;
+
+  constructor(private authenticationService: AuthenticationService) {
+    this.loggedUser = authenticationService.getLoggedUser();
+  }
 
   ngOnInit() {
   }

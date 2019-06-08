@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {EventService} from '../services/event.service';
+import { Event } from '../models/event.model';
 
 @Component({
   selector: 'app-admin',
@@ -8,10 +10,14 @@ import {Router} from '@angular/router';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  events: Array<Event>;
 
-  ngOnInit() {
+  constructor(private router: Router,
+              private eventService: EventService) {
+    this.events = this.eventService.getEvents();
   }
+
+  ngOnInit() {}
 
   addNewEvent() {
     this.router.navigate(['admin', 'new-event']);

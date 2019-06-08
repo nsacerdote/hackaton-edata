@@ -1,3 +1,14 @@
-<p>
-  new-event works!
-</p>
+<div class="event-form">
+  <dp-date-picker [config]="datePickerConfig" [(ngModel)]="selectedDate" theme="dp-material" placeholder="Fecha"></dp-date-picker>
+  <div class="mt">
+    <label *ngFor="let eventType of eventTypes">
+      <input  type="radio" [(ngModel)]="selectedEvent" [value]="eventType.name"/>
+      {{eventType.name}}
+    </label>
+  </div>
+  <div class="mt" *ngIf="invalidForm">Debe seleccionar un fecha y un tipo de enfermedad para continuar para continuar</div>
+</div>
+<div class="btn-group">
+  <app-button class="mr" (buttonClick)="submit()" text="Añadir"></app-button>
+  <app-button (buttonClick)="cancel()" text="Cancelar"></app-button>
+</div>

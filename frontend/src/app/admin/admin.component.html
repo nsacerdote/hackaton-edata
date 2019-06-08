@@ -1,1 +1,8 @@
-<app-button (buttonClick)="addNewEvent()" text="Añadir evento"></app-button>
+<div class="page-header">
+  <div class="page-title">Calendario de eventos</div>
+  <app-button (buttonClick)="addNewEvent()" text="Añadir evento"></app-button>
+</div>
+<div class="event" *ngFor="let event of events">
+  <span>{{event.type}}</span>
+  <span>{{event.date.toLocaleDateString()}}</span>
+</div>
