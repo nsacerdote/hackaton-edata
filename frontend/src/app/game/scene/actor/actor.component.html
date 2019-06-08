@@ -4,6 +4,7 @@
   [style.left]="actor.pos.x + 'px'"
   [style.width]="actor.size.width + 'px'"
   [style.height]="actor.size.height + 'px'"
-  [ngClass]="actor.animationClass ? actor.animationClass + ' infinite animated' : null"
+  class="infinite animated"
+  [ngClass]="actor.animationClass ? actor.animationClass  : 'pulse quick'"
 >
 </div>
