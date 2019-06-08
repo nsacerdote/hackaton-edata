@@ -3,7 +3,7 @@ import {Actor} from './actor';
 
 export class MoveRightAction extends Action {
 
-  constructor(duration: number) {
+  constructor(duration?: number) {
     super(duration, false);
   }
 

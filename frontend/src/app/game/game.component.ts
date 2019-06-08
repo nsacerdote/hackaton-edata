@@ -6,6 +6,8 @@ import { Scene } from './model/scene';
 import { Dialog } from './model/dialog';
 import { MoveToAction } from './model/move-to.action';
 import { MoveRightAction } from './model/move-right.action';
+import {BounceAnimationAction} from './model/bounce-animation.action';
+import {WaitAction} from "./model/wait.action";
 
 @Component({
   selector: 'app-game',
@@ -21,7 +23,7 @@ export class GameComponent implements OnInit {
           '/assets/images/background.png',
           [
             new CellActor(new Pos(200, 200), true, [new MoveToAction(new Pos(400, 600), 5000)]),
-            new CellActor(new Pos(100, 100), false, [new MoveRightAction(2000)])
+            new CellActor(new Pos(100, 100), false, [new MoveRightAction(2000), new BounceAnimationAction(1)])
           ],
           [
             new Dialog(

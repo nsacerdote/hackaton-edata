@@ -7,7 +7,7 @@ export abstract class Action {
   protected remainingDuration: number;
   protected intialPos;
 
-  protected constructor(public duration: number, public isComplete: boolean) {
+  protected constructor(public duration: number = Number.MAX_VALUE, public isComplete: boolean) {
     this.remainingDuration = duration;
   }
 
