@@ -15,13 +15,13 @@ export class GameComponent implements OnInit {
   private levels: Record<string, Level> = {
     INTRO: {
       scenes: [
-        {
-          background: '/assets/images/background.png',
-          actors: [
-            new CellActor(new Pos(300, 200), true),
-            new CellActor(new Pos(100, 100), false)
+        new Scene(
+          '/assets/images/background.png',
+          [
+            new CellActor(new Pos(300, 200), true, []),
+            new CellActor(new Pos(100, 100), false, [])
           ],
-          dialogs: [
+          [
             new Dialog(
               'This is the message',
               '/assets/audio/narrative/intro_scene_1_dialog_1.wav',
@@ -32,18 +32,15 @@ export class GameComponent implements OnInit {
               '/assets/audio/narrative/intro_scene_1_dialog_2.wav',
               '/assets/images/doctor.png'
             )
-
           ]
-        },
-        {
-          background: '/assets/images/background.png',
-          actors: [
-            new CellActor(new Pos(200, 200), true),
-            new CellActor(new Pos(500, 100), false),
-            new CellActor(new Pos(550, 150), false),
-            new CellActor(new Pos(420, 90), false)
+        ),
+        new Scene(
+          '/assets/images/background.png',
+          [
+            new CellActor(new Pos(200, 200), true, []),
+            new CellActor(new Pos(500, 100), false, [])
           ],
-          dialogs: [
+          [
             new Dialog(
               'Scene 2',
               '/assets/audio/narrative/intro_scene_2_dialog_1.wav',
@@ -96,6 +93,7 @@ export class GameComponent implements OnInit {
 
   ngOnInit() {
     this.loadIntroLevel();
+    this.gameLoop();
   }
 
   private loadIntroLevel() {
@@ -107,5 +105,9 @@ export class GameComponent implements OnInit {
   loadNextScene() {
     const nextIndex = this.level.scenes.indexOf(this.currentScene) + 1;
     this.currentScene = this.level.scenes[nextIndex];
+  }
+
+  gameLoop() {
+    setInterval(() => this.currentScene.act(), 16);
   }
 }
