@@ -45,6 +45,10 @@ export class UiComponent implements OnInit, OnChanges {
     }
   }
 
+  loadScene(sceneId: number){
+    this.nextSceneRequest.emit(sceneId);
+  }
+
   loadNextScene(){
     this.showNextSceneButton = false;
     this.nextSceneRequest.emit();

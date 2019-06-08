@@ -1,5 +1,5 @@
 <app-scene [actors]="currentScene.actors"
            [background]="currentScene.background"></app-scene>
-<app-ui (nextSceneRequest)="loadNextScene()"
+<app-ui (nextSceneRequest)="loadNextScene($event)"
         [dialogs]="currentScene.dialogs"
 ></app-ui>

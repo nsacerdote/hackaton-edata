@@ -7,7 +7,7 @@ import { Dialog } from './model/dialog';
 import { MoveToAction } from './model/move-to.action';
 import { MoveRightAction } from './model/move-right.action';
 import {BounceAnimationAction} from './model/bounce-animation.action';
-import {WaitAction} from "./model/wait.action";
+import {WaitAction} from './model/wait.action';
 
 @Component({
   selector: 'app-game',
@@ -135,19 +135,19 @@ export class GameComponent implements OnInit {
         new Scene(
           '/assets/images/background.png',
           [
-            new CellActor(new Pos(50, 350), true, []),
+            new CellActor(new Pos(50, 350), false, []),
             new CellActor(new Pos(900, 350), true, []),
-            new CellActor(new Pos(150, 200), true, []),
-            new CellActor(new Pos(150, 500), true, []),
+            new CellActor(new Pos(150, 200), false, []),
+            new CellActor(new Pos(150, 500), false, []),
             new CellActor(new Pos(750, 200), true, []),
-            new CellActor(new Pos(750, 500), true, []),
-            new CellActor(new Pos(300, 200), true, []),
-            new CellActor(new Pos(300, 350), true, []),
-            new CellActor(new Pos(300, 500), true, []),
+            new CellActor(new Pos(750, 500), false, []),
+            new CellActor(new Pos(300, 200), false, []),
+            new CellActor(new Pos(300, 350), false, []),
+            new CellActor(new Pos(300, 500), false, []),
             new CellActor(new Pos(600, 200), true, []),
-            new CellActor(new Pos(600, 350), true, []),
+            new CellActor(new Pos(600, 350), false, []),
             new CellActor(new Pos(600, 500), true, []),
-            new CellActor(new Pos(450, 100), true, []),
+            new CellActor(new Pos(450, 100), false, []),
             new CellActor(new Pos(450, 600), true, []),
             new CellActor(new Pos(450, 300), false, [])
           ],
@@ -184,8 +184,109 @@ export class GameComponent implements OnInit {
             new Dialog(
               '¿Puedo pincharte para dártelo?',
               '/assets/audio/narrative/misionQuimio05.mp3',
-              '/assets/images/portraits/nurse-portrait.jpg',
-              true
+              '/assets/images/portraits/nurse-portrait.png'
+            )
+          ]
+        ),
+        new Scene(
+          '/assets/images/bg-hospital-room.png',
+          [
+          ],
+          [
+            new Dialog(
+              'Recuerda que a veces los superhéroes tenemos que tomar decisiones difíciles para cumplir ' +
+              'con nuestro deber. ¿Estás seguro?',
+              '/assets/audio/narrative/estasSeguro.mp3',
+              '/assets/images/portraits/superheroes-portrait.jpg'
+            )
+          ]
+        ),
+        new Scene(
+          '/assets/images/bg-hospital-room.png',
+          [
+          ],
+          [
+            new Dialog(
+              'La lucha tendrá que esperar a otro día.',
+              '/assets/audio/narrative/rendirse.mp3',
+              '/assets/images/portraits/superheroes-portrait.jpg'
+            )
+          ]
+        ),
+        new Scene(
+          '/assets/images/background.png',
+          [
+            new CellActor(new Pos(50, 350), false, []),
+            new CellActor(new Pos(900, 350), true, []),
+            new CellActor(new Pos(150, 200), false, []),
+            new CellActor(new Pos(150, 500), false, []),
+            new CellActor(new Pos(750, 200), true, []),
+            new CellActor(new Pos(750, 500), false, []),
+            new CellActor(new Pos(300, 200), false, []),
+            new CellActor(new Pos(300, 350), false, []),
+            new CellActor(new Pos(300, 500), false, []),
+            new CellActor(new Pos(600, 200), true, []),
+            new CellActor(new Pos(600, 350), false, []),
+            new CellActor(new Pos(600, 500), true, []),
+            new CellActor(new Pos(450, 100), false, []),
+            new CellActor(new Pos(450, 600), true, []),
+            new CellActor(new Pos(450, 300), false, [])
+          ],
+          [
+            new Dialog(
+              'Necesito más energía para la metástasis.',
+              '/assets/audio/narrative/misionQuimioSi01.mp3',
+              '/assets/images/portraits/bad-cell-portrait.png'
+            ),
+            new Dialog(
+              '¡No te preocupes, yo me encargo!',
+              '/assets/audio/narrative/defensaCapitanAmerica.mp3',
+              '/assets/images/portraits/captain-america-portrait.jpg'
+            )
+          ]
+        ),
+        new Scene(
+          '/assets/images/background.png',
+          [
+            new CellActor(new Pos(50, 350), false, []),
+            new CellActor(new Pos(900, 350), true, []),
+            new CellActor(new Pos(150, 200), false, []),
+            new CellActor(new Pos(150, 500), false, []),
+            new CellActor(new Pos(750, 200), true, []),
+            new CellActor(new Pos(750, 500), false, []),
+            new CellActor(new Pos(300, 200), false, []),
+            new CellActor(new Pos(300, 350), false, []),
+            new CellActor(new Pos(300, 500), false, []),
+            new CellActor(new Pos(600, 200), true, []),
+            new CellActor(new Pos(600, 350), false, []),
+            new CellActor(new Pos(600, 500), true, []),
+            new CellActor(new Pos(450, 100), false, []),
+            new CellActor(new Pos(450, 600), true, []),
+            new CellActor(new Pos(450, 300), false, [])
+          ],
+          [
+            new Dialog(
+              '¡Es hora de freír estas células cancerígenas!',
+              '/assets/audio/narrative/ataqueIronman.mp3',
+              '/assets/images/portraits/ironman-portrait.png'
+            ),
+            new Dialog(
+              '¡Oh, no!',
+              '/assets/audio/narrative/cancerMuere.mp3',
+              '/assets/images/portraits/bad-cell-portrait.png'
+            )
+          ]
+        ),
+        new Scene(
+          '/assets/images/background.png',
+          [
+          ],
+          [
+            new Dialog(
+              'Por ahora debemos descansar, pero hemos dado un gran paso hoy. Aún queda lucha, seguiremos pronto.' +
+              ' ¡Bien hecho héroe!',
+              '/assets/audio/narrative/misionQuimioFin.mp3',
+              '/assets/images/portraits/superheroes-portrait.jpg'
             )
           ]
         )
@@ -209,14 +310,34 @@ export class GameComponent implements OnInit {
     this.currentScene = this.level.scenes[0];
   }
 
-  loadNextScene() {
-    const nextIndex = this.level.scenes.indexOf(this.currentScene) + 1;
-    if (nextIndex < this.level.scenes.length) {
-      this.currentScene = this.level.scenes[nextIndex];
+  loadNextScene(sceneId) {
+    if(sceneId){
+      console.log(event);
+      this.goToScene(sceneId);
+    }
+    else {
+      this.currentScene.dialogs;
+      let nextIndex;
+      if(this.currentScene.nextScene){
+        nextIndex = this.currentScene.nextScene;
+      }
+      else{
+        nextIndex = this.level.scenes.indexOf(this.currentScene) + 1;
+      }
+
+      this.goToScene(nextIndex);
+    }
+  }
+
+  goToScene(sceneId: number){
+    if (sceneId < this.level.scenes.length) {
+      this.currentScene = this.level.scenes[sceneId];
     } else {
       this.loadNextLevel();
     }
   }
+
+
 
   loadNextLevel() {
     console.log('loadNextLevel');
