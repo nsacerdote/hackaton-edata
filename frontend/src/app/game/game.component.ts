@@ -23,8 +23,21 @@ export class GameComponent implements OnInit {
         new Scene(
           '/assets/images/background.png',
           [
-            new CellActor(new Pos(200, 200), true, [new MoveToAction(new Pos(400, 600), 5000)]),
-            new CellActor(new Pos(100, 100), false, [new MoveRightAction(2000), new BounceAnimationAction(1)])
+            new CellActor(new Pos(50, 350), true, []),
+            new CellActor(new Pos(900, 350), true, []),
+            new CellActor(new Pos(150, 200), true, []),
+            new CellActor(new Pos(150, 500), true, []),
+            new CellActor(new Pos(750, 200), true, []),
+            new CellActor(new Pos(750, 500), true, []),
+            new CellActor(new Pos(300, 200), true, []),
+            new CellActor(new Pos(300, 350), true, []),
+            new CellActor(new Pos(300, 500), true, []),
+            new CellActor(new Pos(600, 200), true, []),
+            new CellActor(new Pos(600, 350), true, []),
+            new CellActor(new Pos(600, 500), true, []),
+            new CellActor(new Pos(450, 100), true, []),
+            new CellActor(new Pos(450, 600), true, []),
+            new CellActor(new Pos(450, 300), false, [])
           ],
           [
             new Dialog(
@@ -38,8 +51,44 @@ export class GameComponent implements OnInit {
         new Scene(
           '/assets/images/background.png',
           [
-            new CellActor(new Pos(200, 200), true, []),
-            new CellActor(new Pos(500, 100), false, [])
+            new CellActor(new Pos(50, 350), true, []),
+            new CellActor(new Pos(900, 350), true, []),
+            new CellActor(new Pos(150, 200), true, []),
+            new CellActor(new Pos(150, 500), true, []),
+            new CellActor(new Pos(750, 200), true, []),
+            new CellActor(new Pos(750, 500), true, []),
+            new CellActor(new Pos(300, 200), true, [
+              new WaitAction(3400),
+              new BounceAnimationAction(1)
+            ]),
+            new CellActor(new Pos(300, 350), true, [
+              new WaitAction(2200),
+              new BounceAnimationAction(1),
+              new MoveToAction(new Pos(300, 500), 1000),
+              new WaitAction(200),
+              new MoveToAction(new Pos(300, 350), 1000)
+            ]),
+            new CellActor(new Pos(300, 500), true, [
+              new WaitAction(4000),
+              new BounceAnimationAction(1)
+            ]),
+            new CellActor(new Pos(600, 200), true, []),
+            new CellActor(new Pos(600, 350), true, []),
+            new CellActor(new Pos(600, 500), true, [
+              new WaitAction(1000),
+              new BounceAnimationAction(1)
+            ]),
+            new CellActor(new Pos(450, 100), true, []),
+            new CellActor(new Pos(450, 600), true, []),
+            new CellActor(new Pos(450, 300), false, [
+              new MoveToAction(new Pos(600, 500), 1000),
+              new WaitAction(200),
+              new MoveToAction(new Pos(300, 350), 1000),
+              new WaitAction(200),
+              new MoveToAction(new Pos(300, 200), 1000),
+              new WaitAction(200),
+              new MoveToAction(new Pos(450, 300), 1000)
+            ])
           ],
           [
             new Dialog(
@@ -51,8 +100,7 @@ export class GameComponent implements OnInit {
         ),
         new Scene(
           '/assets/images/bg-hospital-room.png',
-          [
-          ],
+          [],
           [
             new Dialog(
               '¡Ese cáncer haciendo de las suyas! Se piensa que nadie puede con él, pero está muy equivocado. ' +
@@ -87,6 +135,21 @@ export class GameComponent implements OnInit {
         new Scene(
           '/assets/images/background.png',
           [
+            new CellActor(new Pos(50, 350), true, []),
+            new CellActor(new Pos(900, 350), true, []),
+            new CellActor(new Pos(150, 200), true, []),
+            new CellActor(new Pos(150, 500), true, []),
+            new CellActor(new Pos(750, 200), true, []),
+            new CellActor(new Pos(750, 500), true, []),
+            new CellActor(new Pos(300, 200), true, []),
+            new CellActor(new Pos(300, 350), true, []),
+            new CellActor(new Pos(300, 500), true, []),
+            new CellActor(new Pos(600, 200), true, []),
+            new CellActor(new Pos(600, 350), true, []),
+            new CellActor(new Pos(600, 500), true, []),
+            new CellActor(new Pos(450, 100), true, []),
+            new CellActor(new Pos(450, 600), true, []),
+            new CellActor(new Pos(450, 300), false, [])
           ],
           [
             new Dialog(
