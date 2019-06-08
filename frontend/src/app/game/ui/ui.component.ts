@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {User} from '../../models/user.model';
 import {AuthenticationService} from '../../services/authentication.service';
 
@@ -10,12 +10,17 @@ import {AuthenticationService} from '../../services/authentication.service';
 export class UiComponent implements OnInit {
 
   loggedUser: User;
+  @Output() nextSceneRequest = new EventEmitter();
 
   constructor(private authenticationService: AuthenticationService) {
     this.loggedUser = authenticationService.getLoggedUser();
   }
 
   ngOnInit() {
+    setTimeout(
+      () => this.nextSceneRequest.emit(),
+      2000
+    );
   }
 
 }

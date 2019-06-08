@@ -20,6 +20,8 @@ import { AvatarCircleComponent } from './game/ui/shared/avatar-circle/avatar-cir
 import { UiPanelComponent } from './game/ui/shared/ui-panel/ui-panel.component';
 import { HealthBarComponent } from './game/ui/shared/health-bar/health-bar.component';
 import {DpDatePickerModule} from 'ng2-date-picker';
+import { SandboxComponent } from './sandbox/sandbox.component';
+import { ActorComponent } from './game/scene/actor/actor.component';
 
 @NgModule({
   declarations: [
@@ -36,11 +38,12 @@ import {DpDatePickerModule} from 'ng2-date-picker';
     AvatarCircleComponent,
     UiElementComponent,
     UiComponent,
-    AnimatedShapeComponent,
     NewEventComponent,
     UiPanelComponent,
     HealthBarComponent,
-    AnimatedShapeComponent
+    AnimatedShapeComponent,
+    SandboxComponent,
+    ActorComponent
   ],
   imports: [
     BrowserModule,

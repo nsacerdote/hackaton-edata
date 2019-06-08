@@ -6,7 +6,7 @@ import {User} from '../models/user.model';
 })
 export class AuthenticationService {
 
-  loggedUser: User;
+  loggedUser: User = {name: ''};
 
   constructor() { }
 
