@@ -15,6 +15,7 @@ export class UiComponent implements OnInit, OnChanges {
   @Input() dialogs: Array<Dialog> = [];
 
   currentDialog: Dialog = null;
+  showNextSceneButton: Boolean = false;
 
   constructor(private authenticationService: AuthenticationService) {
     this.loggedUser = authenticationService.getLoggedUser();
@@ -36,7 +37,15 @@ export class UiComponent implements OnInit, OnChanges {
 
   nextDialog() {
     const nextIndex = this.dialogs.indexOf(this.currentDialog) + 1;
+    if(nextIndex == this.dialogs.length){
+      this.showNextSceneButton = true;
+    }
     this.currentDialog = this.dialogs[nextIndex];
+  }
+
+  loadNextScene(){
+    this.showNextSceneButton = false;
+    this.nextSceneRequest.emit();
   }
 
 }

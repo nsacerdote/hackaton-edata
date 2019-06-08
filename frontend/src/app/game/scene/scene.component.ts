@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
+import {Component, ElementRef, Input, OnChanges, OnInit, Renderer2, SimpleChanges} from '@angular/core';
 import { Actor } from '../model/actor';
 
 @Component({
@@ -6,7 +6,7 @@ import { Actor } from '../model/actor';
   templateUrl: './scene.component.html',
   styleUrls: ['./scene.component.scss']
 })
-export class SceneComponent implements OnInit {
+export class SceneComponent implements OnInit, OnChanges {
 
   @Input() background: string;
   @Input() actors: Array<Actor>;
@@ -14,7 +14,18 @@ export class SceneComponent implements OnInit {
   constructor(private renderer: Renderer2, private el: ElementRef) { }
 
   ngOnInit() {
-    this.renderer.setStyle(this.el.nativeElement, 'background-image', 'url(' + this.background + ')');
+    this.setBackground();
   }
+
+  setBackground(){
+    this.renderer.setStyle(this.el.nativeElement, 'background-image', 'url(' + this.background + ')');
+
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.setBackground();
+  }
+
+
 
 }

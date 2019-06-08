@@ -24,6 +24,7 @@ import { SandboxComponent } from './sandbox/sandbox.component';
 import { ActorComponent } from './game/scene/actor/actor.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DialogComponent } from './game/ui/dialog/dialog.component';
+import { NextSceneButtonComponent } from './game/ui/next-scene-button/next-scene-button.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { DialogComponent } from './game/ui/dialog/dialog.component';
     SandboxComponent,
     ActorComponent,
     DialogComponent,
-    ProfileComponent
+    ProfileComponent,
+    NextSceneButtonComponent
   ],
   imports: [
     BrowserModule,

@@ -39,7 +39,9 @@ export class GameComponent implements OnInit {
           background: '/assets/images/background.png',
           actors: [
             new CellActor(new Pos(200, 200), true),
-            new CellActor(new Pos(500, 100), false)
+            new CellActor(new Pos(500, 100), false),
+            new CellActor(new Pos(550, 150), false),
+            new CellActor(new Pos(420, 90), false)
           ],
           dialogs: [
             new Dialog(
@@ -53,7 +55,35 @@ export class GameComponent implements OnInit {
               '/assets/images/doctor.png'
             )
           ]
-
+        },
+        {
+          background: '/assets/images/bg-hospital-room.png',
+          actors: [
+          ],
+          dialogs: [
+            new Dialog(
+              'Scene 3',
+              '/assets/audio/narrative/intro_scene_2_dialog_1.wav',
+              '/assets/images/doctor.png'
+            ),
+            new Dialog(
+              'Scene 3 the message 2',
+              '/assets/audio/narrative/intro_scene_2_dialog_2.wav',
+              '/assets/images/doctor.png'
+            )
+          ]
+        },
+        {
+          background: '/assets/images/bg-all-superheroes.png',
+          actors: [
+          ],
+          dialogs: [
+            new Dialog(
+              'Scene 3',
+              '/assets/audio/narrative/intro_scene_2_dialog_1.wav',
+              '/assets/images/doctor.png'
+            )
+          ]
         }
       ]
     }
@@ -70,6 +100,7 @@ export class GameComponent implements OnInit {
 
   private loadIntroLevel() {
     this.level = this.levels.INTRO;
+    console.log('loadIntroLevel');
     this.currentScene = this.level.scenes[0];
   }
 

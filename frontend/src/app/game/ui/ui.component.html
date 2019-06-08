@@ -6,6 +6,10 @@
   <app-player [playerName]="loggedUser.name"></app-player>
 </app-ui-element>
 
+<app-ui-element [top]="'0'" [right]="'0'" style="margin-right: 50px; margin-top: 380px;" *ngIf="showNextSceneButton">
+  <app-next-scene-button (click)="loadNextScene()"></app-next-scene-button>
+</app-ui-element>
+
 <app-ui-element (click)="nextDialog()" [bottom]="'0'" [left]="'300px'" style="margin-bottom: 10px; margin-right: 10px" *ngIf="currentDialog">
   <app-dialog [dialog]="currentDialog"></app-dialog>
 </app-ui-element>
