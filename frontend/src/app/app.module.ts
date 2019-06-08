@@ -21,6 +21,7 @@ import { UiPanelComponent } from './game/ui/shared/ui-panel/ui-panel.component';
 import { HealthBarComponent } from './game/ui/shared/health-bar/health-bar.component';
 import { SandboxComponent } from './sandbox/sandbox.component';
 import { ActorComponent } from './game/scene/actor/actor.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ActorComponent } from './game/scene/actor/actor.component';
     HealthBarComponent,
     AnimatedShapeComponent,
     SandboxComponent,
-    ActorComponent
+    ActorComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
