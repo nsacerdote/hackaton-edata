@@ -4,7 +4,7 @@
     <input type="text" class="form-input" name="username" placeholder="Nombre de Usuario" [(ngModel)]="username" autofocus>
     <input type="password" class="form-input" name="password" placeholder="Contraseña" [(ngModel)]="password">
     <span *ngIf="invalidForm">Rellena los campos para continuar</span>
-    <app-button text="Iniciar Sesión"></app-button>
+    <app-button (buttonClick)="login()" text="Iniciar Sesión"></app-button>
   </form>
 </div>
 
