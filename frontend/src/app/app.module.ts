@@ -8,6 +8,8 @@ import { AdminComponent } from './admin/admin.component';
 import { GameComponent } from './game/game.component';
 import { SceneComponent } from './game/scene/scene.component';
 import { UiComponent } from './game/ui/ui.component';
+import {FormsModule} from "@angular/forms";
+import { ButtonComponent } from './core/button/button.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { UiComponent } from './game/ui/ui.component';
     AdminComponent,
     GameComponent,
     SceneComponent,
-    UiComponent
+    UiComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

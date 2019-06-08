@@ -1,3 +1,11 @@
-<p>
-  login works!
-</p>
+<div class="login-container">
+  <img class="logo" src="assets/logo-pequeno-valiente.jpg"/>
+  <form (submit)="login()" class="login-form">
+    <input type="text" class="form-input" name="username" placeholder="Nombre de Usuario" [(ngModel)]="username" autofocus>
+    <input type="password" class="form-input" name="password" placeholder="Contraseña" [(ngModel)]="password">
+    <span *ngIf="invalidForm">Rellena los campos para continuar</span>
+    <app-button text="Iniciar Sesión"></app-button>
+  </form>
+</div>
+
+<a class="admin-link" routerLink="/admin">Acceder a Panel de administración</a>
