@@ -6,18 +6,18 @@
   <app-player [playerName]="loggedUser.name"></app-player>
 </app-ui-element>
 
-<app-ui-element [top]="'0'" [right]="'0'" style="margin-right: 11px; margin-top: 380px;" *ngIf="showNextSceneButton">
+<app-ui-element [top]="'380px'" [right]="'0'" style="margin-right: 10px;" *ngIf="showNextSceneButton">
   <app-next-scene-button (click)="loadNextScene()"></app-next-scene-button>
 </app-ui-element>
 
-<app-ui-element *ngIf="currentDialog && currentDialog.promptUser" (click)="loadScene(currentDialog.nextSceneNo)" [bottom]="'120px'" [left]="'820px'">
+<app-ui-element *ngIf="currentDialog && currentDialog.promptUser" (click)="loadScene(currentDialog.nextSceneNo)" [bottom]="'120px'" [right]="'100px'">
   <app-prompt-button [type]="'danger'" text="NO"></app-prompt-button>
 </app-ui-element>
 
-<app-ui-element *ngIf="currentDialog && currentDialog.promptUser" (click)="loadScene(currentDialog.nextSceneYes)" [bottom]="'120px'" [left]="'900px'">
+<app-ui-element *ngIf="currentDialog && currentDialog.promptUser" (click)="loadScene(currentDialog.nextSceneYes)" [bottom]="'120px'" [right]="'10px'">
   <app-prompt-button [type]="'info'" text="SI"></app-prompt-button>
 </app-ui-element>
 
-<app-ui-element (click)="nextDialog()" [bottom]="'0'" [left]="'300px'" style="margin-bottom: 10px; margin-right: 10px" *ngIf="currentDialog">
+<app-ui-element (click)="nextDialog()" [bottom]="'0'" [right]="'0'" style="margin-bottom: 10px; margin-right: 10px" *ngIf="currentDialog">
   <app-dialog [dialog]="currentDialog"></app-dialog>
 </app-ui-element>
