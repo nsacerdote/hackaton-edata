@@ -8,6 +8,7 @@ import { MoveToAction } from './model/move-to.action';
 import {AnimationAction} from './model/bounce-animation.action';
 import {WaitAction} from './model/wait.action';
 import { PotionActor } from './model/potion.actor';
+import { IronmanGloveActor } from './model/ironman-glove.actor';
 
 @Component({
   selector: 'app-game',
@@ -200,12 +201,12 @@ export class GameComponent implements OnInit {
           [
             new Dialog(
               'Recuerda que a veces los superhéroes tenemos que tomar decisiones difíciles para cumplir ' +
-              'con nuestro deber. ¿Estás seguro?',
+              'con nuestro deber. ¿No lo vas a hacer?',
               '/assets/audio/narrative/estasSeguro.mp3',
               '/assets/images/portraits/superheroes-portrait.jpg',
               true,
-              3,
-              4
+              4,
+              3
             )
           ]
         ),
@@ -221,7 +222,7 @@ export class GameComponent implements OnInit {
               '/assets/images/portraits/superheroes-portrait.jpg'
             )
           ],
-          6
+          7
         ),
         // index 4
         new Scene(
@@ -260,6 +261,7 @@ export class GameComponent implements OnInit {
         new Scene(
           '/assets/images/background.png',
           [
+            new IronmanGloveActor(),
             new CellActor(new Pos(50, 350), false, []),
             new CellActor(new Pos(900, 350), true, []),
             new CellActor(new Pos(150, 200), false, []),
@@ -324,24 +326,20 @@ export class GameComponent implements OnInit {
   }
 
   loadNextScene(sceneId) {
-    if(sceneId){
+    if (sceneId) {
       this.goToScene(sceneId);
-    }
-    else {
-      this.currentScene.dialogs;
+    } else {
       let nextIndex;
-      if(this.currentScene.nextScene){
+      if (this.currentScene.nextScene) {
         nextIndex = this.currentScene.nextScene;
-      }
-      else{
+      } else {
         nextIndex = this.level.scenes.indexOf(this.currentScene) + 1;
       }
-
       this.goToScene(nextIndex);
     }
   }
 
-  goToScene(sceneId: number){
+  goToScene(sceneId: number) {
     if (sceneId < this.level.scenes.length) {
       this.currentScene = this.level.scenes[sceneId];
     } else {
