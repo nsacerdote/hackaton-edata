@@ -290,7 +290,7 @@ export class GameComponent implements OnInit {
   }
 
   private loadIntroLevel() {
-    this.level = this.levels.MISSION_CHEMO;
+    this.level = this.levels.INTRO;
     console.log('loadIntroLevel');
     this.currentScene = this.level.scenes[0];
   }
