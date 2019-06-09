@@ -14,6 +14,7 @@ import { IronmanBulletActor } from './model/ironman-bullet.actor';
 import {CaptainAmericaShieldActor} from './model/captain-america-shield.actor';
 import { Howl } from 'howler';
 import { Router } from '@angular/router';
+import { RunAction } from './model/run.action';
 
 @Component({
   selector: 'app-game',
@@ -355,14 +356,17 @@ function getIronManScene() {
     );
     ironManGlove.actions.push(new AnimationAction('heartBeat', 100));
     return [
-      new WaitAction(300),
-      new AnimationAction('shake', 100),
-      new ExitAction(() => {
-        scene.health = scene.health - 10;
+      new WaitAction(200),
+      new RunAction(() => {
         const cellDeadSound = new Howl({
           src: ['/assets/audio/sfx/cell-dead.wav']
         });
         cellDeadSound.play();
+      }),
+      new WaitAction(100),
+      new AnimationAction('shake', 100),
+      new ExitAction(() => {
+        scene.health = scene.health - 10;
       })
     ];
   };
