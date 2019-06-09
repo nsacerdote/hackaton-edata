@@ -14,7 +14,3 @@ Running frontend:
 - cd frontend
 - npm install
 - npm start
-
-Might be useful:
-- Charts: chart.js => https://github.com/chartjs/Chart.js
-- Sockets: socket.io => https://github.com/socketio/socket.io
