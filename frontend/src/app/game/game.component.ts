@@ -5,9 +5,9 @@ import { Level } from './model/level';
 import { Scene } from './model/scene';
 import { Dialog } from './model/dialog';
 import { MoveToAction } from './model/move-to.action';
-import { MoveRightAction } from './model/move-right.action';
-import {BounceAnimationAction} from './model/bounce-animation.action';
+import {AnimationAction} from './model/bounce-animation.action';
 import {WaitAction} from './model/wait.action';
+import { PotionActor } from './model/potion.actor';
 
 @Component({
   selector: 'app-game',
@@ -59,24 +59,24 @@ export class GameComponent implements OnInit {
             new CellActor(new Pos(750, 500), true, []),
             new CellActor(new Pos(300, 200), true, [
               new WaitAction(3400),
-              new BounceAnimationAction(1)
+              new AnimationAction('bounce')
             ]),
             new CellActor(new Pos(300, 350), true, [
               new WaitAction(2200),
-              new BounceAnimationAction(1),
+              new AnimationAction('bounce'),
               new MoveToAction(new Pos(300, 500), 1000),
               new WaitAction(200),
               new MoveToAction(new Pos(300, 350), 1000)
             ]),
             new CellActor(new Pos(300, 500), true, [
               new WaitAction(4000),
-              new BounceAnimationAction(1)
+              new AnimationAction('bounce')
             ]),
             new CellActor(new Pos(600, 200), true, []),
             new CellActor(new Pos(600, 350), true, []),
             new CellActor(new Pos(600, 500), true, [
               new WaitAction(1000),
-              new BounceAnimationAction(1)
+              new AnimationAction('bounce')
             ]),
             new CellActor(new Pos(450, 100), true, []),
             new CellActor(new Pos(450, 600), true, []),
@@ -167,6 +167,7 @@ export class GameComponent implements OnInit {
         new Scene(
           '/assets/images/bg-hospital-room.png',
           [
+            new PotionActor(new Pos(600, 300), [])
           ],
           [
             new Dialog(
@@ -184,10 +185,14 @@ export class GameComponent implements OnInit {
             new Dialog(
               '¿Puedo pincharte para dártelo?',
               '/assets/audio/narrative/misionQuimio05.mp3',
-              '/assets/images/portraits/nurse-portrait.png'
+              '/assets/images/portraits/nurse-portrait.png',
+              true,
+              4,
+              2
             )
           ]
         ),
+        // index 2
         new Scene(
           '/assets/images/bg-hospital-room.png',
           [
@@ -197,10 +202,14 @@ export class GameComponent implements OnInit {
               'Recuerda que a veces los superhéroes tenemos que tomar decisiones difíciles para cumplir ' +
               'con nuestro deber. ¿Estás seguro?',
               '/assets/audio/narrative/estasSeguro.mp3',
-              '/assets/images/portraits/superheroes-portrait.jpg'
+              '/assets/images/portraits/superheroes-portrait.jpg',
+              true,
+              3,
+              4
             )
           ]
         ),
+        // index 3
         new Scene(
           '/assets/images/bg-hospital-room.png',
           [
@@ -211,8 +220,10 @@ export class GameComponent implements OnInit {
               '/assets/audio/narrative/rendirse.mp3',
               '/assets/images/portraits/superheroes-portrait.jpg'
             )
-          ]
+          ],
+          6
         ),
+        // index 4
         new Scene(
           '/assets/images/background.png',
           [
@@ -245,6 +256,7 @@ export class GameComponent implements OnInit {
             )
           ]
         ),
+        // index 5
         new Scene(
           '/assets/images/background.png',
           [
@@ -277,8 +289,9 @@ export class GameComponent implements OnInit {
             )
           ]
         ),
+        // index 6
         new Scene(
-          '/assets/images/background.png',
+          '/assets/images/bg-all-superheroes.png',
           [
           ],
           [
@@ -312,7 +325,6 @@ export class GameComponent implements OnInit {
 
   loadNextScene(sceneId) {
     if(sceneId){
-      console.log(event);
       this.goToScene(sceneId);
     }
     else {
@@ -340,7 +352,6 @@ export class GameComponent implements OnInit {
 
 
   loadNextLevel() {
-    console.log('loadNextLevel');
     this.level = this.levels[this.level.nextLevel];
     this.currentScene = this.level.scenes[0];
   }
