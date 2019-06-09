@@ -4,7 +4,7 @@ import { Pos } from './pos';
 
 export class MoveToAction extends Action {
 
-  constructor(private target: Pos, duration: number) {
+  constructor(private target: Pos, duration: number, private onFinish = () => {}) {
     super(duration, false);
   }
 
@@ -17,6 +17,7 @@ export class MoveToAction extends Action {
     } else {
       actor.pos.x = this.target.x;
       actor.pos.y = this.target.y;
+      this.onFinish();
     }
   }
 }

@@ -11,7 +11,8 @@ import { PotionActor } from './model/potion.actor';
 import { IronmanGloveActor } from './model/ironman-glove.actor';
 import { ExitAction } from './model/exit.action';
 import { IronmanBulletActor } from './model/ironman-bullet.actor';
-import {CaptainAmericaShieldActor} from "./model/captain-america-shield.actor";
+import {CaptainAmericaShieldActor} from './model/captain-america-shield.actor';
+import { Howl } from 'howler';
 
 @Component({
   selector: 'app-game',
@@ -340,6 +341,10 @@ export class GameComponent implements OnInit {
 
 function getIronManScene() {
   const clickListenerBadCell = posBadCell => {
+    const shootSound = new Howl({
+      src: ['/assets/audio/sfx/shoot.wav']
+    });
+    shootSound.play();
     scene.actors.push(
       new IronmanBulletActor(new Pos(ironManGlove.pos.x, ironManGlove.pos.y), posBadCell)
     );
@@ -349,6 +354,10 @@ function getIronManScene() {
       new AnimationAction('shake', 100),
       new ExitAction(() => {
         scene.health = scene.health - 10;
+        const cellDeadSound = new Howl({
+          src: ['/assets/audio/sfx/cell-dead.wav']
+        });
+        cellDeadSound.play();
       })
     ];
   };
