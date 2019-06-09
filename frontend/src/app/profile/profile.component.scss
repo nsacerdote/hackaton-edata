@@ -4,13 +4,19 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: #1eb04e;
+  bg-: #1eb04e;
+  background-image: url("~src/assets/images/bg-headquarter.png");
+}
+
+.content{
+  background-color: rgba(0,0,0,0.6);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: kenney-future-square, sans-serif;
   color: #444444;
+  height: 100%;
 }
 
 app-avatar-circle {
@@ -20,4 +26,24 @@ app-avatar-circle {
 
 span {
   margin-top: 20px;
+  color: #FFFFFF  ;
+}
+
+.pulse{
+  animation-name: pulse_animation;
+  animation-duration: 1000ms;
+  transform-origin:70% 70%;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes pulse_animation {
+  0% { transform: scale(1); }
+  30% { transform: scale(1); }
+  40% { transform: scale(1.08); }
+  50% { transform: scale(1); }
+  60% { transform: scale(1); }
+  70% { transform: scale(1.05); }
+  80% { transform: scale(1); }
+  100% { transform: scale(1); }
 }

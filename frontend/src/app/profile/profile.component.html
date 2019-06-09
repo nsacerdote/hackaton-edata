@@ -1,4 +1,13 @@
-<app-avatar-circle  image="assets/images/kid.png"></app-avatar-circle>
-<span>{{playerName}}</span>
-<span>Misiones Completadas</span>
-<button (click)="showGame()">Volver</button>
+<div class="content">
+  <app-avatar-circle  image="assets/images/kid.png"></app-avatar-circle>
+  <span>{{playerName}}</span>
+  <span>¡Has conseguido una nueva medalla!</span>
+  <br>
+  <div>
+    <img src="assets/images/medal-wonderwoman.png" width="50">
+    <img src="assets/images/medal-spiderman.png" width="50">
+    <img src="assets/images/medal-ironman.png" width="50" class="pulse">
+  </div>
+  <br><br>
+  <app-next-scene-button (click)="showGame()" style="position:absolute;right: 30px;"></app-next-scene-button>
+</div>
