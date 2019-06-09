@@ -13,9 +13,11 @@ export class UiComponent implements OnInit, OnChanges {
   loggedUser: User;
   @Output() nextSceneRequest = new EventEmitter();
   @Input() dialogs: Array<Dialog> = [];
+  @Input() health = 100;
+  @Input() showEnemy = true;
 
   currentDialog: Dialog = null;
-  showNextSceneButton: Boolean = false;
+  showNextSceneButton = false;
 
   constructor(private authenticationService: AuthenticationService) {
     this.loggedUser = authenticationService.getLoggedUser();

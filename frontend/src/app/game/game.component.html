@@ -2,4 +2,6 @@
            [background]="currentScene.background"></app-scene>
 <app-ui (nextSceneRequest)="loadNextScene($event)"
         [dialogs]="currentScene.dialogs"
+        [health]="currentScene.health"
+        [showEnemy]="currentScene.showEnemy"
 ></app-ui>

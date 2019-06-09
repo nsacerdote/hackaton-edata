@@ -11,6 +11,7 @@ import { PotionActor } from './model/potion.actor';
 import { IronmanGloveActor } from './model/ironman-glove.actor';
 import { ExitAction } from './model/exit.action';
 import { IronmanBulletActor } from './model/ironman-bullet.actor';
+import {CaptainAmericaShieldActor} from "./model/captain-america-shield.actor";
 
 @Component({
   selector: 'app-game',
@@ -230,6 +231,7 @@ export class GameComponent implements OnInit {
         new Scene(
           '/assets/images/background.png',
           [
+            new CaptainAmericaShieldActor(),
             new CellActor(new Pos(50, 350), false, []),
             new CellActor(new Pos(900, 350), true, []),
             new CellActor(new Pos(150, 200), false, []),
@@ -240,7 +242,11 @@ export class GameComponent implements OnInit {
             new CellActor(new Pos(300, 350), false, []),
             new CellActor(new Pos(300, 500), false, []),
             new CellActor(new Pos(600, 200), true, []),
-            new CellActor(new Pos(600, 350), false, []),
+            new CellActor(new Pos(600, 350), false, [
+              new WaitAction(3000),
+              new MoveToAction(new Pos(740, 350), 200),
+              new MoveToAction(new Pos(600, 350), 200)
+            ]),
             new CellActor(new Pos(600, 500), true, []),
             new CellActor(new Pos(450, 100), false, []),
             new CellActor(new Pos(450, 600), true, []),
@@ -263,7 +269,7 @@ export class GameComponent implements OnInit {
         getIronManScene(),
         // index 6
         new Scene(
-          '/assets/images/bg-all-superheroes.png',
+          '/assets/images/victory.png',
           [
           ],
           [
@@ -273,7 +279,10 @@ export class GameComponent implements OnInit {
               '/assets/audio/narrative/misionQuimioFin.mp3',
               '/assets/images/portraits/superheroes-portrait.jpg'
             )
-          ]
+          ],
+          null,
+          100,
+          false
         )
       ]
     }
@@ -291,7 +300,6 @@ export class GameComponent implements OnInit {
 
   private loadIntroLevel() {
     this.level = this.levels.INTRO;
-    console.log('loadIntroLevel');
     this.currentScene = this.level.scenes[0];
   }
 
@@ -339,7 +347,9 @@ function getIronManScene() {
     return [
       new WaitAction(300),
       new AnimationAction('shake', 100),
-      new ExitAction()
+      new ExitAction(() => {
+        scene.health = scene.health - 10;
+      })
     ];
   };
   const ironManGlove = new IronmanGloveActor();
