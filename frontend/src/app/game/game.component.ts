@@ -11,7 +11,8 @@ import { PotionActor } from './model/potion.actor';
 import { IronmanGloveActor } from './model/ironman-glove.actor';
 import { ExitAction } from './model/exit.action';
 import { IronmanBulletActor } from './model/ironman-bullet.actor';
-import {CaptainAmericaShieldActor} from "./model/captain-america-shield.actor";
+import {CaptainAmericaShieldActor} from './model/captain-america-shield.actor';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-game',
@@ -134,7 +135,7 @@ export class GameComponent implements OnInit {
       ]
     },
     MISSION_CHEMO: {
-      nextLevel: 'HEADQUARTER',
+      nextPage: 'headquarter',
       scenes: [
         new Scene(
           '/assets/images/background.png',
@@ -291,7 +292,7 @@ export class GameComponent implements OnInit {
   level: Level = null;
   currentScene: Scene = null;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.loadIntroLevel();
@@ -328,8 +329,12 @@ export class GameComponent implements OnInit {
 
 
   loadNextLevel() {
-    this.level = this.levels[this.level.nextLevel];
-    this.currentScene = this.level.scenes[0];
+    if (this.level.nextLevel) {
+      this.level = this.levels[this.level.nextLevel];
+      this.currentScene = this.level.scenes[0];
+    } else if (this.level.nextPage) {
+      this.router.navigate([this.level.nextPage]);
+    }
   }
 
   gameLoop() {
