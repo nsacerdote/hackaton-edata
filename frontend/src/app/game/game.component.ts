@@ -269,7 +269,7 @@ export class GameComponent implements OnInit {
         getIronManScene(),
         // index 6
         new Scene(
-          '/assets/images/bg-all-superheroes.png',
+          '/assets/images/victory.png',
           [
           ],
           [
