@@ -28,7 +28,9 @@ export class UiComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.initDialogs();
+    if (changes.dialogs) {
+      this.initDialogs();
+    }
   }
 
   private initDialogs() {
@@ -47,11 +49,11 @@ export class UiComponent implements OnInit, OnChanges {
     }
   }
 
-  loadScene(sceneId: number){
+  loadScene(sceneId: number) {
     this.nextSceneRequest.emit(sceneId);
   }
 
-  loadNextScene(){
+  loadNextScene() {
     this.showNextSceneButton = false;
     this.nextSceneRequest.emit();
   }
