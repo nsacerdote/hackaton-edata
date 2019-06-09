@@ -13,7 +13,7 @@ export class PotionActor extends Actor {
       [new AnimationAction('zoomIn'), ...actions],
       'POTION_ACTOR'
     );
-    this.animationClass = 'pulse';
+    this.animationClass = 'pulse infinite';
   }
 
   onClicked() {}

@@ -4,6 +4,7 @@ import {Action} from './action';
 
 export class Actor {
 
+  public exitRequest = false;
   protected currentAction;
   public animationClass: string = null;
 
@@ -24,5 +25,9 @@ export class Actor {
         this.currentAction = this.actions.shift();
       }
     }
+  }
+
+  exitScene() {
+    this.exitRequest = true;
   }
 }

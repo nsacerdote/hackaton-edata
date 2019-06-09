@@ -13,7 +13,7 @@ export class CellActor extends Actor {
       actions,
       'CELL_ACTOR'
     );
-    this.animationClass = 'pulse quick';
+    this.animationClass = 'pulse quick infinite';
   }
 
   onClicked() {}

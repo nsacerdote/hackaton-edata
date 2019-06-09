@@ -10,5 +10,6 @@ export class Scene {
 
   act() {
     this.actors.forEach(actor => actor.act());
+    this.actors = this.actors.filter(a => !a.exitRequest);
   }
 }
