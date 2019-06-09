@@ -19,6 +19,6 @@ export class ProfileComponent implements OnInit {
   }
 
   showGame(){
-    this.router.navigate(['game']);
+    this.router.navigate(['headquarter']);
   }
 }

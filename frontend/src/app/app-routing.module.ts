@@ -6,12 +6,14 @@ import { GameComponent } from './game/game.component';
 import {NewEventComponent} from './admin/new-event/new-event.component';
 import {SandboxComponent} from "./sandbox/sandbox.component";
 import {ProfileComponent} from "./profile/profile.component";
+import {HeadquarterComponent} from "./headquarter/headquarter.component";
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'admin/new-event', component: NewEventComponent},
   { path: 'game', component: GameComponent },
+  { path: 'headquarter', component: HeadquarterComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'sandbox', component: SandboxComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
