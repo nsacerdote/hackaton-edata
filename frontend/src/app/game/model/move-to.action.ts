@@ -4,7 +4,7 @@ import { Pos } from './pos';
 
 export class MoveToAction extends Action {
 
-  constructor(private target: Pos, duration?: number) {
+  constructor(private target: Pos, duration: number) {
     super(duration, false);
   }
 

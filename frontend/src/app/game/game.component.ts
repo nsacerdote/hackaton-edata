@@ -9,6 +9,8 @@ import {AnimationAction} from './model/bounce-animation.action';
 import {WaitAction} from './model/wait.action';
 import { PotionActor } from './model/potion.actor';
 import { IronmanGloveActor } from './model/ironman-glove.actor';
+import { ExitAction } from './model/exit.action';
+import { IronmanBulletActor } from './model/ironman-bullet.actor';
 
 @Component({
   selector: 'app-game',
@@ -258,39 +260,7 @@ export class GameComponent implements OnInit {
           ]
         ),
         // index 5
-        new Scene(
-          '/assets/images/background.png',
-          [
-            new IronmanGloveActor(),
-            new CellActor(new Pos(50, 350), false, []),
-            new CellActor(new Pos(900, 350), true, []),
-            new CellActor(new Pos(150, 200), false, []),
-            new CellActor(new Pos(150, 500), false, []),
-            new CellActor(new Pos(750, 200), true, []),
-            new CellActor(new Pos(750, 500), false, []),
-            new CellActor(new Pos(300, 200), false, []),
-            new CellActor(new Pos(300, 350), false, []),
-            new CellActor(new Pos(300, 500), false, []),
-            new CellActor(new Pos(600, 200), true, []),
-            new CellActor(new Pos(600, 350), false, []),
-            new CellActor(new Pos(600, 500), true, []),
-            new CellActor(new Pos(450, 100), false, []),
-            new CellActor(new Pos(450, 600), true, []),
-            new CellActor(new Pos(450, 300), false, [])
-          ],
-          [
-            new Dialog(
-              '¡Es hora de freír estas células cancerígenas!',
-              '/assets/audio/narrative/ataqueIronman.mp3',
-              '/assets/images/portraits/ironman-portrait.png'
-            ),
-            new Dialog(
-              '¡Oh, no!',
-              '/assets/audio/narrative/cancerMuere.mp3',
-              '/assets/images/portraits/bad-cell-portrait.png'
-            )
-          ]
-        ),
+        getIronManScene(),
         // index 6
         new Scene(
           '/assets/images/bg-all-superheroes.png',
@@ -320,7 +290,7 @@ export class GameComponent implements OnInit {
   }
 
   private loadIntroLevel() {
-    this.level = this.levels.INTRO;
+    this.level = this.levels.MISSION_CHEMO;
     console.log('loadIntroLevel');
     this.currentScene = this.level.scenes[0];
   }
@@ -357,4 +327,55 @@ export class GameComponent implements OnInit {
   gameLoop() {
     setInterval(() => this.currentScene.act(), 0);
   }
+}
+
+
+function getIronManScene() {
+  const clickListenerBadCell = posBadCell => {
+    scene.actors.push(
+      new IronmanBulletActor(new Pos(ironManGlove.pos.x, ironManGlove.pos.y), posBadCell)
+    );
+    ironManGlove.actions.push(new AnimationAction('heartBeat', 100));
+    return [
+      new WaitAction(300),
+      new AnimationAction('shake', 100),
+      new ExitAction()
+    ];
+  };
+  const ironManGlove = new IronmanGloveActor();
+  const scene = new Scene(
+    '/assets/images/background.png',
+    [
+      ironManGlove,
+      new CellActor(new Pos(50, 350), false, [], clickListenerBadCell),
+      new CellActor(new Pos(900, 350), true, []),
+      new CellActor(new Pos(150, 200), false, [], clickListenerBadCell),
+      new CellActor(new Pos(150, 500), false, [], clickListenerBadCell),
+      new CellActor(new Pos(750, 200), true, []),
+      new CellActor(new Pos(750, 500), false, [], clickListenerBadCell),
+      new CellActor(new Pos(300, 200), false, [], clickListenerBadCell),
+      new CellActor(new Pos(300, 350), false, [], clickListenerBadCell),
+      new CellActor(new Pos(300, 500), false, [], clickListenerBadCell),
+      new CellActor(new Pos(600, 200), true, []),
+      new CellActor(new Pos(600, 350), false, [], clickListenerBadCell),
+      new CellActor(new Pos(600, 500), true, []),
+      new CellActor(new Pos(450, 100), false, [], clickListenerBadCell),
+      new CellActor(new Pos(450, 600), true, []),
+      new CellActor(new Pos(450, 300), false, [], clickListenerBadCell)
+    ],
+    [
+      new Dialog(
+        '¡Es hora de freír estas células cancerígenas!',
+        '/assets/audio/narrative/ataqueIronman.mp3',
+        '/assets/images/portraits/ironman-portrait.png'
+      ),
+      new Dialog(
+        '¡Oh, no!',
+        '/assets/audio/narrative/cancerMuere.mp3',
+        '/assets/images/portraits/bad-cell-portrait.png'
+      )
+    ]
+  );
+
+  return scene;
 }

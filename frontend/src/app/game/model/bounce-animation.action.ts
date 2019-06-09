@@ -5,8 +5,8 @@ export class AnimationAction extends Action {
 
   oldAnimationClass = 'NOT_INITIALIZED';
 
-  constructor(private animationClass: string) {
-    super(800, false);
+  constructor(private animationClass: string, duration?: number) {
+    super(duration || 800, false);
   }
 
   doAction(actor: CellActor, percentage: number) {

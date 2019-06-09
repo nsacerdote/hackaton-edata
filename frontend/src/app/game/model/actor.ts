@@ -9,9 +9,7 @@ export class Actor {
   public animationClass: string = null;
 
   constructor(public pos: Pos, public size: Size, public image: string, public actions: Array<Action>, public type: string) {
-    if (actions.length !== 0) {
-      this.currentAction = actions.shift();
-    }
+    this.getNextAction();
   }
 
   onClicked() {
@@ -22,12 +20,20 @@ export class Actor {
       if (!this.currentAction.isComplete) {
         this.currentAction.play(this);
       } else {
-        this.currentAction = this.actions.shift();
+        this.getNextAction();
       }
+    } else {
+      this.getNextAction();
     }
   }
 
   exitScene() {
     this.exitRequest = true;
+  }
+
+  private getNextAction() {
+    if (this.actions.length !== 0) {
+      this.currentAction = this.actions.shift();
+    }
   }
 }

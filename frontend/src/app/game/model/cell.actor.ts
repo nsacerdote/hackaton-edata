@@ -5,7 +5,7 @@ import { Action } from './action';
 
 export class CellActor extends Actor {
 
-  constructor(initPos: Pos, public isGood: boolean, actions: Array<Action>) {
+  constructor(initPos: Pos, public isGood: boolean, actions: Array<Action>, private clickListener = pos => []) {
     super(
       initPos,
       new Size(75, 75),
@@ -16,6 +16,8 @@ export class CellActor extends Actor {
     this.animationClass = 'pulse quick infinite';
   }
 
-  onClicked() {}
+  onClicked() {
+    this.actions.push.apply(this.actions, this.clickListener(this.pos));
+  }
 
 }
