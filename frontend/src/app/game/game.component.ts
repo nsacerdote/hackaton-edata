@@ -279,7 +279,10 @@ export class GameComponent implements OnInit {
               '/assets/audio/narrative/misionQuimioFin.mp3',
               '/assets/images/portraits/superheroes-portrait.jpg'
             )
-          ]
+          ],
+          null,
+          100,
+          false
         )
       ]
     }
@@ -344,7 +347,9 @@ function getIronManScene() {
     return [
       new WaitAction(300),
       new AnimationAction('shake', 100),
-      new ExitAction()
+      new ExitAction(() => {
+        scene.health = scene.health - 10;
+      })
     ];
   };
   const ironManGlove = new IronmanGloveActor();

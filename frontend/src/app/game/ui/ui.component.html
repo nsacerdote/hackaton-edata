@@ -1,5 +1,5 @@
-<app-ui-element [top]="'0'" [right]="'0'" style="margin-right: 10px; margin-top: 10px;">
-  <app-enemy></app-enemy>
+<app-ui-element [top]="'0'" [right]="'0'" style="margin-right: 10px; margin-top: 10px;" *ngIf="showEnemy">
+  <app-enemy [health]="health"></app-enemy>
 </app-ui-element>
 
 <app-ui-element [bottom]="'0'" [left]="'0'" style="margin-left: 10px; margin-bottom: 10px;">

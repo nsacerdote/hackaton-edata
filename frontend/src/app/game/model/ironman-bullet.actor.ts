@@ -13,7 +13,7 @@ export class IronmanBulletActor extends Actor {
       [new MoveToAction(target, 250), new ExitAction()],
       'IRONMAN_BULLET_ACTOR'
     );
-    this.animationClass = 'rollOut quick infinite';
+    this.animationClass = 'pulse quick infinite';
   }
 
   onClicked() {}
