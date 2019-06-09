@@ -17,8 +17,6 @@ export class CellActor extends Actor {
   }
 
   onClicked() {
-    this.isGood = !this.isGood;
-    this.image = this.isGood ? '/assets/images/good-cell.png' : '/assets/images/bad-cell.png';
   }
 
   act() {
