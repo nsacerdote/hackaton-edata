@@ -1,14 +1,19 @@
+<div class="page-header">
+  <div class="page-title">Nuevo Evento</div>
+</div>
 <div class="event-form">
+  <div class="mb">Selecciona una fecha:</div>
   <dp-date-picker [config]="datePickerConfig" [(ngModel)]="selectedDate" theme="dp-material" placeholder="Fecha"></dp-date-picker>
   <div class="mt">
-    <label *ngFor="let eventType of eventTypes">
+    <div class="mb">Selecciona un tipo de evento:</div>
+    <label *ngFor="let eventType of eventTypes" class="custom-checkbox">
       <input  type="radio" [(ngModel)]="selectedEvent" [value]="eventType.name"/>
-      {{eventType.name}}
+      <span>{{eventType.name}}</span>
     </label>
   </div>
-  <div class="mt" *ngIf="invalidForm">Debe seleccionar un fecha y un tipo de enfermedad para continuar para continuar</div>
+  <div class="mt alert" *ngIf="invalidForm">Debe seleccionar un fecha y un tipo de enfermedad para continuar para continuar</div>
 </div>
 <div class="btn-group">
-  <app-button class="mr" (buttonClick)="submit()" text="Añadir"></app-button>
-  <app-button (buttonClick)="cancel()" text="Cancelar"></app-button>
+  <app-button class="mr" (buttonClick)="cancel()" color="danger" text="Cancelar"></app-button>
+  <app-button (buttonClick)="submit()" color="success" text="Añadir"></app-button>
 </div>

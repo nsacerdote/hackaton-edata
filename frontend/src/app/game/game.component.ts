@@ -200,12 +200,12 @@ export class GameComponent implements OnInit {
           [
             new Dialog(
               'Recuerda que a veces los superhéroes tenemos que tomar decisiones difíciles para cumplir ' +
-              'con nuestro deber. ¿Estás seguro?',
+              'con nuestro deber. ¿No lo vas a hacer?',
               '/assets/audio/narrative/estasSeguro.mp3',
               '/assets/images/portraits/superheroes-portrait.jpg',
               true,
-              3,
-              4
+              4,
+              3
             )
           ]
         ),
@@ -221,7 +221,7 @@ export class GameComponent implements OnInit {
               '/assets/images/portraits/superheroes-portrait.jpg'
             )
           ],
-          6
+          7
         ),
         // index 4
         new Scene(
