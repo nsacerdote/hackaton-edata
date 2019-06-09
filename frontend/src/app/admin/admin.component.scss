@@ -1,7 +1,6 @@
 $page-background-color: white;
-$page-header-border-color: black;
-$event-even-background-color: white;
-$event-odd-background-color: whitesmoke;
+$event-even-background-color: whitesmoke;
+$event-odd-background-color: white;
 
 :host {
   width: 100%;
@@ -13,7 +12,8 @@ $event-odd-background-color: whitesmoke;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  border-bottom: 1px solid $page-header-border-color;
+  background-color: #80A2BB;
+  color: white;
   .page-title {
     font-size: 1.5rem;
     font-weight: bold;
@@ -24,8 +24,17 @@ $event-odd-background-color: whitesmoke;
   background-color: $event-even-background-color;
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   &:nth-child(odd) {
     background-color: $event-odd-background-color;
+  }
+}
+
+.return-link {
+  background-color: ghostwhite;
+  padding: 0.5rem;
+  a {
+    color: black;
+    text-decoration: none;
   }
 }

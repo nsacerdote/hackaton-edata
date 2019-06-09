@@ -8,6 +8,7 @@
 html, body {
   height: 100%;
   margin: 0;
+  font-family: Roboto;
 }
 
 .mt {
@@ -24,6 +25,13 @@ html, body {
 
 .ml {
   margin-left: 1rem;
+}
+
+.alert {
+  background-color: #ffe8e6;
+  color: #7f2c22;
+  padding: 0.5rem;
+  border-radius: 5px;
 }
 
 
