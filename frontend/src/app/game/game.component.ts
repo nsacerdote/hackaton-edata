@@ -8,6 +8,7 @@ import { MoveToAction } from './model/move-to.action';
 import {AnimationAction} from './model/bounce-animation.action';
 import {WaitAction} from './model/wait.action';
 import { PotionActor } from './model/potion.actor';
+import { IronmanGloveActor } from './model/ironman-glove.actor';
 
 @Component({
   selector: 'app-game',
@@ -260,6 +261,7 @@ export class GameComponent implements OnInit {
         new Scene(
           '/assets/images/background.png',
           [
+            new IronmanGloveActor(),
             new CellActor(new Pos(50, 350), false, []),
             new CellActor(new Pos(900, 350), true, []),
             new CellActor(new Pos(150, 200), false, []),
@@ -324,24 +326,20 @@ export class GameComponent implements OnInit {
   }
 
   loadNextScene(sceneId) {
-    if(sceneId){
+    if (sceneId) {
       this.goToScene(sceneId);
-    }
-    else {
-      this.currentScene.dialogs;
+    } else {
       let nextIndex;
-      if(this.currentScene.nextScene){
+      if (this.currentScene.nextScene) {
         nextIndex = this.currentScene.nextScene;
-      }
-      else{
+      } else {
         nextIndex = this.level.scenes.indexOf(this.currentScene) + 1;
       }
-
       this.goToScene(nextIndex);
     }
   }
 
-  goToScene(sceneId: number){
+  goToScene(sceneId: number) {
     if (sceneId < this.level.scenes.length) {
       this.currentScene = this.level.scenes[sceneId];
     } else {

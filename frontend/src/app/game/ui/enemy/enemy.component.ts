@@ -7,14 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnemyComponent implements OnInit {
 
-  health = 50;
+  health = 100;
 
   constructor() { }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.health = 100;
-    }, 1000)
   }
 
 }
