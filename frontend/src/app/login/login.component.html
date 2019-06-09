@@ -3,9 +3,9 @@
   <form class="login-form">
     <input type="text" class="form-input" name="username" placeholder="Nombre de Usuario" [(ngModel)]="username" autofocus>
     <input type="password" class="form-input" name="password" placeholder="Contraseña" [(ngModel)]="password">
-    <span *ngIf="invalidForm">Rellena los campos para continuar</span>
-    <app-button (buttonClick)="login()" text="Iniciar Sesión"></app-button>
+    <span class="alert mb" *ngIf="invalidForm">Rellena los campos para continuar</span>
+    <app-button (buttonClick)="login()" color="primary" text="Iniciar Sesión"></app-button>
   </form>
 </div>
 
-<a class="admin-link" routerLink="/admin">Panel de Administración</a>
+<a class="admin-link" routerLink="/admin"><i class="fas fa-lock fa-fw"></i></a>

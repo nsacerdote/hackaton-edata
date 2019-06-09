@@ -1,6 +1,9 @@
 <div class="page-header">
   <div class="page-title">Calendario de eventos</div>
-  <app-button (buttonClick)="addNewEvent()" text="Añadir evento"></app-button>
+  <app-button (buttonClick)="addNewEvent()" color="success" text="Añadir evento"></app-button>
+</div>
+<div class="return-link">
+  <a routerLink="/"><i class="fas fa-chevron-left fa-fw"></i>Salir del panel de administración</a>
 </div>
 <div class="event" *ngFor="let event of events">
   <span>{{event.type}}</span>

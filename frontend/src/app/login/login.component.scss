@@ -25,11 +25,18 @@
   margin-bottom: 1rem;
   padding: 0.5rem;
   border: 1px solid black;
-  border-radius: 2px;
+  border-radius: 5px;
 }
 
 .admin-link {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
+  background-color: #80A2BB;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  &:hover {
+    background-color: #6e8ca5;
+  }
 }
