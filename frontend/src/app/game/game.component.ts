@@ -185,10 +185,14 @@ export class GameComponent implements OnInit {
             new Dialog(
               '¿Puedo pincharte para dártelo?',
               '/assets/audio/narrative/misionQuimio05.mp3',
-              '/assets/images/portraits/nurse-portrait.png'
+              '/assets/images/portraits/nurse-portrait.png',
+              true,
+              4,
+              2
             )
           ]
         ),
+        // index 2
         new Scene(
           '/assets/images/bg-hospital-room.png',
           [
@@ -198,10 +202,14 @@ export class GameComponent implements OnInit {
               'Recuerda que a veces los superhéroes tenemos que tomar decisiones difíciles para cumplir ' +
               'con nuestro deber. ¿Estás seguro?',
               '/assets/audio/narrative/estasSeguro.mp3',
-              '/assets/images/portraits/superheroes-portrait.jpg'
+              '/assets/images/portraits/superheroes-portrait.jpg',
+              true,
+              3,
+              4
             )
           ]
         ),
+        // index 3
         new Scene(
           '/assets/images/bg-hospital-room.png',
           [
@@ -212,8 +220,10 @@ export class GameComponent implements OnInit {
               '/assets/audio/narrative/rendirse.mp3',
               '/assets/images/portraits/superheroes-portrait.jpg'
             )
-          ]
+          ],
+          6
         ),
+        // index 4
         new Scene(
           '/assets/images/background.png',
           [
@@ -246,6 +256,7 @@ export class GameComponent implements OnInit {
             )
           ]
         ),
+        // index 5
         new Scene(
           '/assets/images/background.png',
           [
@@ -278,8 +289,9 @@ export class GameComponent implements OnInit {
             )
           ]
         ),
+        // index 6
         new Scene(
-          '/assets/images/background.png',
+          '/assets/images/bg-all-superheroes.png',
           [
           ],
           [
@@ -313,7 +325,6 @@ export class GameComponent implements OnInit {
 
   loadNextScene(sceneId) {
     if(sceneId){
-      console.log(event);
       this.goToScene(sceneId);
     }
     else {
@@ -341,7 +352,6 @@ export class GameComponent implements OnInit {
 
 
   loadNextLevel() {
-    console.log('loadNextLevel');
     this.level = this.levels[this.level.nextLevel];
     this.currentScene = this.level.scenes[0];
   }

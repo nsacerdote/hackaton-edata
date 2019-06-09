@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Dialog} from "../../../model/dialog";
 
 @Component({
   selector: 'app-ui-panel',
@@ -6,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ui-panel.component.scss']
 })
 export class UiPanelComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
