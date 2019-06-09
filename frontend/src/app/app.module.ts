@@ -26,6 +26,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { DialogComponent } from './game/ui/dialog/dialog.component';
 import { NextSceneButtonComponent } from './game/ui/next-scene-button/next-scene-button.component';
 import { PromptButtonComponent } from './game/ui/prompt-button/prompt-button.component';
+import { HeadquarterComponent } from './headquarter/headquarter.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { PromptButtonComponent } from './game/ui/prompt-button/prompt-button.com
     DialogComponent,
     ProfileComponent,
     NextSceneButtonComponent,
-    PromptButtonComponent
+    PromptButtonComponent,
+    HeadquarterComponent
   ],
   imports: [
     BrowserModule,

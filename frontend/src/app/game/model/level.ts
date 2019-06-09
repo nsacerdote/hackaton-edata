@@ -1,5 +1,5 @@
 import { Scene } from './scene';
 
 export class Level {
-  constructor(public nextLevel: string, public scenes: Array<Scene>) {}
+  constructor(public scenes: Array<Scene>, public nextLevel?: string, public nextPage?: string) {}
 }

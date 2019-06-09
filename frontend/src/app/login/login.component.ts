@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   login() {
     if (this.username && this.password) {
       this.authenticationService.setLoggedUser({name: this.username});
-      this.router.navigate(['game']);
+      this.router.navigate(['headquarter']);
     } else {
       this.invalidForm = true;
     }
