@@ -1,6 +1,25 @@
 {
   "name": "frontend",
   "version": "0.0.0",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Adrián Pérez",
+      "email": "adrianperezmontesdeoca@users.noreply.github.com"
+    },
+    {
+      "name": "Andrés Del Pino",
+      "email": "adpb@users.noreply.github.com"
+    },
+    {
+      "name": "Jose David Borges",
+      "email": "jdbg91@users.noreply.github.com"
+    },
+    {
+      "name": "Natalio Sacerdote",
+      "email": "nsacerdote@users.noreply.github.com"
+    }
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
